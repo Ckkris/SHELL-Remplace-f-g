@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Shell-remplace-f-g : Remplacer les lettres f par g dans les noms de fichiers textes ayant plus de 10 lignes">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Shell-remplace-f-g</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/Ckkris/SHELL-Remplace-f-g">View on GitHub</a>
+
+          <h1 id="project_title">Shell-remplace-f-g</h1>
+          <h2 id="project_tagline">Remplacer les lettres f par g dans les noms de fichiers textes ayant plus de 10 lignes</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/Ckkris/SHELL-Remplace-f-g/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/Ckkris/SHELL-Remplace-f-g/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="binsh" class="anchor" href="#binsh" aria-hidden="true"><span class="octicon octicon-link"></span></a>!/bin/sh</h1>
+
+<p>for i in $( find . -name '<em>f</em>' )
+    do 
+        #echo $i
+        count=$( cat $i | wc -l)
+        #echo $count
+        if [ $count -gt 10 ]
+            then echo "$i;$count"
+            r=$( echo $i | sed 's/f/g/g')
+            mv $i $r
+        fi
+done</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Shell-remplace-f-g maintained by <a href="https://github.com/Ckkris">Ckkris</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
